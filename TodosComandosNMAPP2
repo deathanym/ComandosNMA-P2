@@ -1,0 +1,145 @@
+
+TÉCNICAS BÁSICAS DE SCANEO:
+
+    Escanear un solo objetivo - nmap [target]
+    Escanear múltiples objetivos - nmap [target1,target2,etc]
+    Escanear una lista de objetivos - nmap -iL [list.txt]
+    Escanear un rango de hosts - nmap [range of IP addresses]
+    Escanear una subred completa - nmap [IP address/cdir]
+    Explorar hosts aleatorios - nmap -iR [number]
+    Excluyendo los objetivos de un scan - nmap [targets] –exclude [targets]
+    Excluyendo los objetivos mediante una lista - nmap [targets] –excludefile [list.txt]
+    Realizar una exploración agresiva - nmap -A [target]
+    Escanear un objetivo IPv6 - nmap -6 [target]
+
+
+OPCIONES DE DESCUBRIMIENTO:
+
+    Realizar solamente una exploración de ping - nmap-sP [target]
+    No hacer ping - nmap -PN [target]
+    TCP SYN Ping - nmap -PS [target]
+    Ping TCP ACK - nmap -PA [target]
+    UDP ping - nmap -PU [target]
+    Ping SCTP ​​Init - nmap -PY [target]
+    Eco ICMP ping - nmap -PE [target]
+    Ping ICMP Timestamp - nmap -PP [target]
+    Ping ICMP de máscara de dirección - nmap -PM [target]
+    Ping protocolo IP - nmap -PO [target]
+    ARP ping - nmap -PR [target]
+    Traceroute - nmap -traceroute [target]
+    Fuerza resolución DNS inversa - nmap -R [target]
+    Deshabilitar resolución DNS inversa - nmap -n [target]
+    Alternative DNS lookup - nmap -system-dns [target]
+    Especifique manualmente los servidores DNS - nmap -dns-servers [servers] [target]
+    Crear una lista de host - nmap -SL [target]
+
+
+OPCIONES AVANZADAS DE SCANNEO:
+
+    TCP SYN Scan - nmap -sS [target]
+    TCP connect scan - nmap -sT [target]
+    UDP scan - nmap -sU [target]
+    TCP Null scan - nmap -sN [target]
+    TCP Fin scan - nmap -sF [target]
+    Xmas Scan - nmap -sX [target]
+    Escaneo TCP ACK - nmap -sA [target]
+    Custom TCP scan - nmap -scanflags [flags] [target]
+    Exploración protocolo IP - nmap -sO [target]
+    Enviar paquetes Ethernet - nmap -send-eth [target]
+    Enviar paquetes IP - nmap -send-ip [target]
+
+
+OPCIONES DE SCANNEO DE PUERTOS:
+
+    Realizar un análisis rápido - nmap -F [target]
+    Escanear puertos específicos - nmap -p [Puertos] [target]
+    Escanear puertos por nombre - nmap -p [nombre del puerto] [target]
+    Escanea los puertos de protocolo - nmap -sU-sT-p U: [puertos], T: [puertos] [target]
+    Analizar todos los puertos - nmap -p "*" [target]
+    Escanea los puertos principales - nmap -top-ports [número] [target]
+    Realice un escaneo de puertos secuencial - nmap -r [target]
+
+
+DETECCIÓN DE VERSIÓN:
+
+    Detección del sistema operativo - nmap -O [target]
+    Enviar Fingerprints TCP/IP - www.nmap.org/submit/
+    Tratar de adivinar un desconocido - nmap –osscan-guess [target]
+    Servicio de detección de versión - nmap -sV [target]
+    Solución de problemas de las exploraciones versión - nmap -sV-version-trace [target]
+    Realizar un análisis RPC - nmap -sR [target]
+
+
+OPCIONES DE SINCRONIZACIÓN:
+
+    Plantillas de temporización - nmap -T [0-5] [target]
+    Ajuste el paquete TTL - nmap –ttl [time] [target]
+    Mínima de las conexiones paralelas - nmap –min-parallelism [number] [target]
+    Número máximo de conexión en paralelo - nmap –max-parallelism [number] [target]
+    Tamaño mínimo grupo de hosts - nmap –min-hostgroup [number] [targets]
+    Tamaño máximo del grupo de acogida - nmap –max-hostgroup [number] [targets]
+    Máximo tiempo de espera RTT - nmap –initial-rtt-timeout [time] [target]
+    Tiempo de espera de RTT inicial - nmap –max-rtt-timeout [TTL] [target]
+    Intentos máximos - nmap –max-retries [number] [target]
+    Tiempo de espera de host - nmap –host-timeout [time] [target]
+    Retraso de exploración mínimo - nmap –scan-delay [time] [target]
+    Máximo retraso de la exploración - nmap –max-scan-delay [time] [target]
+    Tasa de paquetes mínimo - nmap –min-rate [number] [target]
+    Máxima velocidad de paquetes - nmap –max-rate [number] [target]
+    Derrota a restablecer los límites de frecuencia - nmap –defeat-rst-ratelimit [target]
+
+
+EVASIÓN DE FIREWALL:
+
+    Fragmentar paquetes - nmap -f [target]
+    Especifique un MTU específico - nmap –mtu [MTU] [target]
+    Utilice un señuelo - nmap -D RND: [number] [target]
+    Exploración zombie inactivo - nmap -sI [zombie] [target]
+    Especifique manualmente un puerto de origen - nmap –source-port [port] [target]
+    Anexar datos aleatorios - nmap –data-length [size] [target]
+    Selección aleatoria de orden objetivo del análisis - nmap –randomize-hosts [target]
+    Spoof MAC Address - nmap –spoof-mac [MAC|0|vendor] [target]
+    Enviar sumas de comprobación incorrectas - nmap –badsum [target]
+
+
+OPCIONES DE SALIDA:
+
+    Guardar el resultado en un archivo de texto - nmap -oN [scan.txt] [target]
+    Guardar el resultado en un archivo xml - nmap -oX [scan.xml] [target]
+    Salida de grep - nmap -oG [scan.txt] [target]
+    Salida de todos los tipos de archivo - nmap -oA [path/filename] [target]
+    Periódicamente mostrar las estadísticas - nmap –stats-every [time] [target]
+    Salida 133t - nmap -oS [scan.txt] [target]
+
+
+SOLUCIÓN DE PROBLEMAS Y DEPURACIÓN:
+
+    Ayuda - nmap -h
+    Muestra la versión de Nmap - nmap -V
+    Resultados detallados - nmap -v [target]
+    Depuración - nmap -d [target]
+    Mostrar el Estado del puerto - nmap –reason [target]
+    Sólo mostrar los puertos abiertos - nmap –open [target]
+    Paquetes de rastreo - nmap –packet-trace [target]
+    Visualización de redes de acogida - nmap –iflist
+    Especifique una interfaz de red - nmap -e [interface] [target]
+
+
+NMAP SCRIPTING ENGINE:
+
+    Ejecutar secuencias de comandos individuales - nmap –script [script.nse] [target]
+    Ejecutar múltiples scripts - nmap –script [expression] [target]
+    Categorías Script - all, auth, default, discovery, external, intrusive, malware, safe, vuln
+    Ejecutar scripts por categorías - nmap –script [category] [target]
+    Ejecutar secuencias de comandos de múltiples categorías - nmap –script [category1,category2, etc]
+    Solucionar problemas de scripts - nmap –script [script] –script-trace [target]
+    Actualización de la base de datos de secuencia de comandos - nmap –script-updatedb
+
+
+NDIFF:
+
+    Comparación con Ndiff - ndiff [scan1.xml] [scan2.xml]
+    Ndiff modo verbose - ndiff-v [scan1.xml] [scan2.xml]
+    Modo de salida XML - ndiff-xml [scan1.xm] [scan2.xml]
+
+
